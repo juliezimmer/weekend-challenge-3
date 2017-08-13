@@ -3,26 +3,31 @@
 }
 
 
-/*
+
 #taskList{
     margin: 0;
     padding: 0;
+    color: black;
 }
 
- Style the taskList 
+ /*Style the taskList */
 #taskList {
     cursor: pointer;
     position: relative;
     padding: 12px 8px 12px 40px;
-    background: #eee;
+    background-color: #89C5C4;
     font-size: 18px;
     transition: 0.2s;
+    width: 800px;
+    height: auto;
+    text-align: center;
+    
 }
-*/
+
 
 /*style for header*/
 .header {
-    width: 600px;
+    width: 800px;
     height: 150px;
     background-color: #f44336;
     padding: 30px 40px;
@@ -34,6 +39,12 @@
     margin:0 auto;
     width: 500px;
 }
+
+/*
+.list > div{
+
+}
+*/
 
 /* When clicked on, add a background color */
 #taskList.checked {
@@ -66,3 +77,4 @@ input {
 .addBtn:hover {
     background-color: #bbb;
 }
+

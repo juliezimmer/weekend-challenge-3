@@ -17,7 +17,36 @@ function getTasks(){
         url: "/tasks",
         success: function(res) {
             console.log("Here is the current task list:", res);
-            //createTaskList();
+            createTaskList(res);
         } //end of ajax call
-    });     
+    }); //end ajax request    
 } //end getTasks() function
+
+
+function createTaskList(tasksArray) {
+    //empty the DOM before updating it
+    $("#viewTasks").empty();
+    //loop through tasksArray and add each task to the DOM
+    for(var i = 0; i < tasksArray.length; i++) {
+        var tasks = tasksArray[i];
+        //add each object identified with the index position in the array
+        //add a row for the task to go
+        var taskRow = $('<tr><tr>');
+        
+        //information to go in each row of the table in the DOM
+        //"id" is taken from the DB and links the information in the DB to the row
+        taskRow.data("id", tasks.id);
+
+        //adds the row to the DOM
+        $("#viewTasks").append(taskRow);
+
+        //identifies where each part of the task object should go on the DOM
+        var taskToDo = $('<td>' + tasks.task + '</td>');
+        var taskCompleted = $('<td>' + tasks.completed + '</td>');
+        var taskNotes = $('<td>' + tasks.notes + '</td>');
+
+        $(taskRow).append(taskToDo, taskCompleted, taskNotes);
+
+
+    }
+};
