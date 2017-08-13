@@ -17,7 +17,7 @@ function getTasks(){
         url: "/tasks",
         success: function(res) {
             console.log("Here is the current task list:", res);
-            createTaskList();
+            //createTaskList();
         } //end of ajax call
     });     
 } //end getTasks() function

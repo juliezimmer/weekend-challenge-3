@@ -1,6 +1,6 @@
 var express = require ('express');
 var router = express.Router();
-var pool = require('../modules.pool');
+var pool = require('../modules/pool');
 
 router.get('/', function(req,res) {
     console.log("routerget was hit");
@@ -23,8 +23,11 @@ router.get('/', function(req,res) {
                 } else{ //the query was successful
                     //send the query results to the server(?) 
                     res.send(result.rows);
+                    console.log(result.rows);
                 }
             });
         }
     });
 });
+
+module.exports = router;
