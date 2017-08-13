@@ -1,0 +1,38 @@
+*{
+    box-sixing: border-box;
+}
+
+#taskList{
+    margin: 0;
+    padding: 0;
+}
+
+/*style for header*/
+.header {
+    background-color: #f44336;
+    padding: 30px 40px;
+    color: white;
+    text-align: center;
+}
+
+/*style for input box*/
+input {
+    border: none;
+    width: 75%;
+    padding: 10px;
+    float: left;
+    font-size: 16px;
+}
+
+/*style for add button*/
+.addBtn {
+    padding: 10px;
+    width: 25%;
+    background: #d9d9d9;
+    color: #555;
+    float: left;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
