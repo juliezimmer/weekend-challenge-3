@@ -5,14 +5,13 @@ $(document).ready(function(){
 
     //load existing tasks when the page loads
     getTasks();
-    //updateTasks();
-    
 
 //add a new task to the list
 $('#addButton').on('click',function(){
     console.log("add button was clicked");
     //get user input and create object
 
+    //variables for input fields
     var taskToDo = $('#newTask').val();
     var taskCompleted = $('#completed').val();
     var taskNotes = $('#notes').val();
@@ -70,14 +69,14 @@ function createTaskList(tasksArray) {
         taskRow.data('id', tasks.id);
 
         //adds the row to the DOM
-        $("#viewTasks").prepend(taskRow);
+        $("#viewTasks").append(taskRow);
 
         //identifies where each part of the task object should go on the DOM
         var taskToDo = $('<td>' + tasks.task + '</td>');
         var taskCompleted = $('<td>' + tasks.completed + '</td>');
         var taskNotes = $('<td>' + tasks.notes + '</td>');
 
-        $(taskRow).append(taskToDo, taskCompleted, taskNotes);
-    };
-}
+        $(taskRow).prepend(taskToDo, taskCompleted, taskNotes);
+    }
+};
 

@@ -2,30 +2,6 @@
     box-sizing: border-box;
 }
 
-
-
-#taskList{
-    
-    margin: 0;
-    padding: 0;
-    color: black;
-}
-
- /*Style the taskList */
-#taskList {
-    cursor: pointer;
-    position: relative;
-    padding: 12px 8px 12px 40px;
-    background-color: #89C5C4;
-    font-size: 18px;
-    transition: 0.2s;
-    width: 900px;
-    height: auto;
-    text-align: center;
-    
-}
-
-
 /*style for header*/
 .header {
     width: 900px;
@@ -40,13 +16,21 @@
     margin:0 auto;
     width: 700px;
 }
-
-
-/*
-.list > div{
-
+ /*Style for taskList */
+#taskList {
+    cursor: pointer;
+    position: relative;
+    padding: 12px 8px 12px 40px;
+    background-color: #89C5C4;
+    font-size: 18px;
+    transition: 0.2s;
+    width: 900px;
+    height: auto;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    color: black;
 }
-*/
 
 /* When clicked on, add a background color */
 #taskList.checked {
@@ -54,7 +38,7 @@
     color: #fff;
 }
 
-/*style for input box*/
+/*style for input boxes*/
 #newTask {
     border: solid 2px black;
     width: 40%;
@@ -97,8 +81,5 @@
     font-size: 15px;
     cursor: pointer;
     transition: 0.3s;
-}
-.addBtn:hover {
-    background-color: #bbb;
 }
 
