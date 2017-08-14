@@ -20,10 +20,10 @@ $('#addButton').on('click',function(){
         task: taskToDo,
         status: taskCompleted,
         notes: taskNotes
-    };
+    }; //end of object creation
     saveTask(newTask);
+});//end Add button
 });
-
 //get the tasks from the DB to load on the DOM
 function getTasks(){
     console.log("in getTasks");
@@ -34,7 +34,7 @@ function getTasks(){
         success: function(res) {
             console.log("Here is the current task list:", res);
             createTaskList(res);
-        } //end of ajax call
+        } //end of success call 
     }); //end ajax request    
 } //end getTasks() function
 
@@ -49,10 +49,10 @@ function saveTask(newTask) {
         success: function(res) {
             console.log("added a new task:",res);
             getTasks();
-        }
+        } //end of success call
 
-    });
-}
+    }); // of ajax call
+} //end of saveTask function
 
 function createTaskList(tasksArray) {
     //empty the DOM before updating it
@@ -62,11 +62,11 @@ function createTaskList(tasksArray) {
         var tasks = tasksArray[i];
         //add each object identified with the index position in the array
         //add a row for the task to go
-        var taskRow = $('<tr><tr>');
+        var taskRow = $('<tr></tr>');
         
         //information to go in each row of the table in the DOM
         //"id" is taken from the DB and links the information in the DB to the row
-        taskRow.data('id', tasks.id);
+        //taskRow.data('id', tasks.id);
 
         //adds the row to the DOM
         $("#viewTasks").append(taskRow);
@@ -77,6 +77,8 @@ function createTaskList(tasksArray) {
         var taskNotes = $('<td>' + tasks.notes + '</td>');
 
         $(taskRow).prepend(taskToDo, taskCompleted, taskNotes);
-    }
-};
+    } //end for loop
+}; //end of createTaskList function
+
+
 
