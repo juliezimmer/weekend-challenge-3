@@ -30,4 +30,29 @@ router.get('/', function(req,res) {
     });
 });
 
+router.post('/', function(req,res){
+    console.log("post route has been hit");
+    //establish connection between server and database
+    pool.connect(function (errorConnectingToDatabase, client, done){
+        if (errorConnectingToDatabase) {
+            console.log("there has been an error connecting to the DB:", errorConnectingToDatabase);
+            res.sendStatus(500);
+        } else {
+            client.query('INSERT INTO tasks (task, completed, notes) VALUES ($1, $2, $3);',
+            //establishes array that is used to populate the DOM
+            [req.body.task, req.body.status, req.body.notes],
+            function (errorMakingQuery, results) {
+                done();
+            if (errorMakingQuery) {
+                console.log("There has been an error with the query:", errorMakingQuery);
+                res.sendStatus(500);
+            } else {
+                res.sendStatus(200); 
+            }
+        });
+    } 
+});
+
+});
+
 module.exports = router;

@@ -5,6 +5,7 @@
 
 
 #taskList{
+    
     margin: 0;
     padding: 0;
     color: black;
@@ -18,7 +19,7 @@
     background-color: #89C5C4;
     font-size: 18px;
     transition: 0.2s;
-    width: 800px;
+    width: 900px;
     height: auto;
     text-align: center;
     
@@ -27,8 +28,8 @@
 
 /*style for header*/
 .header {
-    width: 800px;
-    height: 150px;
+    width: 900px;
+    height: 300px;
     background-color: #f44336;
     padding: 30px 40px;
     color: white;
@@ -37,8 +38,9 @@
 
 .header > div {
     margin:0 auto;
-    width: 500px;
+    width: 700px;
 }
+
 
 /*
 .list > div{
@@ -53,24 +55,46 @@
 }
 
 /*style for input box*/
-input {
+#newTask {
     border: solid 2px black;
-    width: 75%;
+    width: 40%;
     padding: 10px;
     float: left;
-    font-size: 16px;
+    font-size: 12px;
 }
 
+#completed {
+    border: solid 2px black;
+    width: 15%;
+    padding: 10px;
+    float: center;
+    font-size: 12px;
+}
+
+#notes {
+    border: solid 2px black;
+    width: 40%;
+    padding: 10px;
+    float: right;
+    font-size: 12px;
+}
+
+#buttonContainer > div {
+    padding: 40px;
+    margin:0 auto;
+    width: 40%;
+
+}
 /*style for add button*/
-.addBtn {
+#addButton {
     border: solid 2px black;
     padding: 10px;
-    width: 25%;
+    width: 60%;
     background: #d9d9d9;
     color: #555;
-    float: left;
+    float: center;
     text-align: center;
-    font-size: 16px;
+    font-size: 15px;
     cursor: pointer;
     transition: 0.3s;
 }
